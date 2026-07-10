@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-paper: #faf9f5;
-  --color-ink: #16160f;
-  --color-ink-soft: #55554a;
-  --color-signal: #b5282e;
-  --color-gold: #a9863f;
-  --color-hairline: #16160f26;
+  --color-paper: #121110;
+  --color-ink: #f5f3ec;
+  --color-ink-soft: #b3ab9c;
+  --color-signal: #4a8f5f;
+  --color-gold: #c99a6b;
+  --color-hairline: #f5f3ec26;
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
