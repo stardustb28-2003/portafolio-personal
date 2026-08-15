@@ -73,7 +73,7 @@ export default function Home() {
             <span>Disponible para proyectos</span>
             <span className="h-1 w-1 rounded-full bg-signal" />
             <a href="#contacto" className="text-ink underline decoration-hairline underline-offset-4 hover:text-signal">
-              Escríbeme
+              
             </a>
           </div>
         </Reveal>
@@ -152,7 +152,7 @@ export default function Home() {
                 <li>TypeScript</li>
                 <li>Tailwind CSS</li>
                 <li>Supabase</li>
-                <li>Figma</li>
+                <li>Firebase</li>
               </ul>
             </div>
           </Reveal>
@@ -162,7 +162,7 @@ export default function Home() {
       <footer id="contacto" className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 xl:max-w-6xl">
         <Reveal>
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl lg:text-6xl">
-            Hablemos.
+            Contacto.
           </h2>
         </Reveal>
 
@@ -177,7 +177,7 @@ export default function Home() {
 
             <p>
               <span className="font-medium">WhatsApp: </span>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="inline-block border-b border-ink hover:text-signal hover:border-signal">
+              <a href="https://wa.me/+51933233888" target="_blank" rel="noopener noreferrer" className="inline-block border-b border-ink hover:text-signal hover:border-signal">
                 +51 933 233 888
               </a>
             </p>
