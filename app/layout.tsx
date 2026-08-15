@@ -21,7 +21,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Conde Palomino, Brayan Aldair — Portafolio",
+  title: "Brayan Conde — Portafolio",
   description: "Desarrollador/a y diseñador/a. Trabajo seleccionado, sobre mí y contacto.",
 };
 
