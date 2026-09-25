@@ -28,35 +28,25 @@ export type Project = {
   role: string;
   year: string;
   desc: string;
-  link: string;
+  link?: string;
 };
 
 export const projects: Project[] = [
   {
     n: "01",
+    title: "Sistema de gestión para boticas",
+    role: "Full-stack · Base de datos · Tiempo real",
+    year: "2026",
+    desc: "Sistema privado para un cliente real: punto de venta, inventario por lotes, roles y permisos, caja y créditos, alertas de stock/vencimientos, analítica y un dashboard en tiempo real.",
+  },
+  {
+    n: "02",
     title: "María Luisa Nutricionista",
     role: "Frontend · Backend · Base de datos",
     year: "2026",
     desc: "Plataforma web comercial para servicios de nutrición preventiva, con tienda, reservas y autenticación segura.",
     link: "https://nutricionistamarialuisa.vercel.app/",
   },
-  
-  //{
-  //  n: "02",
-  //  title: "Nombre del Proyecto Dos",
-  //  role: "Full-stack",
-  //  year: "2024",
-  //  desc: "Una línea contando qué resolviste y para quién.",
-  //  link: "#",
-  //},
-  //{
-  //  n: "03",
-  //  title: "Nombre del Proyecto Tres",
-  //  role: "Diseño UI",
-  //  year: "2024",
-  //  desc: "Una línea contando qué resolviste y para quién.",
-  //  link: "#",
-  //},
 ];
 
 export type Skill = {
@@ -77,19 +67,19 @@ export const skills: Skill[] = [
     icon: "database",
     title: "Bases de datos",
     level: "Nivel intermedio",
-    items: ["Supabase", "Firebase", "Modelado relacional/NoSQL"],
+    items: ["Supabase (Postgres, Realtime, Storage)", "Firebase", "Modelado relacional/NoSQL"],
   },
   {
     icon: "server",
     title: "Backend",
     level: "Nivel intermedio",
-    items: ["Node.js", "APIs REST", "Autenticación"],
+    items: ["Node.js", "APIs REST", "Autenticación con JWT", "Validación con Zod"],
   },
   {
     icon: "git",
     title: "Herramientas",
     level: "Nivel intermedio",
-    items: ["Git / GitHub", "Vercel", "Figma"],
+    items: ["Git / GitHub", "Vercel", "Power BI"],
   },
 ];
 

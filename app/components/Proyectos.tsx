@@ -23,55 +23,78 @@ export default function Proyectos() {
       </motion.div>
 
       <ul>
-        {projects.map((item, i) => (
-          <motion.li
-            key={item.n}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="group border-b border-hairline"
-          >
-            <motion.a
-              href={item.link}
-              target={item.link.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              whileHover="hover"
-              className="flex items-center gap-3 py-5 sm:gap-6 sm:py-7"
+        {projects.map((item, i) => {
+          const hasLink = Boolean(item.link);
+          const Wrapper = hasLink ? motion.a : motion.div;
+          const wrapperProps = hasLink
+            ? {
+                href: item.link,
+                target: item.link!.startsWith("http") ? "_blank" : undefined,
+                rel: "noopener noreferrer",
+              }
+            : {};
+
+          return (
+            <motion.li
+              key={item.n}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="group border-b border-hairline"
             >
-              <span className="font-mono text-sm text-ink-soft sm:text-base">
-                {item.n}
-              </span>
-
-              <div className="min-w-0 flex-1">
-                <motion.h3
-                  variants={{ hover: { x: 6 } }}
-                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="font-[family-name:var(--font-display)] font-medium text-lg transition-colors group-hover:text-ink-soft sm:text-2xl lg:text-3xl"
-                >
-                  {item.title}
-                </motion.h3>
-                <p className="mt-1 line-clamp-2 text-sm text-ink-soft sm:line-clamp-none sm:text-base">
-                  {item.desc}
-                </p>
-              </div>
-
-              <span className="hidden font-mono text-sm uppercase tracking-widest text-ink-soft md:block">
-                {item.role}
-              </span>
-              <span className="font-mono text-sm text-ink-soft">{item.year}</span>
-
-              <motion.span
-                variants={{ hover: { x: 4, opacity: 1 } }}
-                initial={{ opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="hidden text-ink sm:inline-block"
+              <Wrapper
+                {...wrapperProps}
+                whileHover="hover"
+                className={`flex items-center gap-3 py-5 sm:gap-6 sm:py-7 ${
+                  hasLink ? "" : "cursor-default"
+                }`}
               >
-                <ArrowUpRight size={20} />
-              </motion.span>
-            </motion.a>
-          </motion.li>
-        ))}
+                <span className="font-mono text-sm text-ink-soft sm:text-base">
+                  {item.n}
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <motion.h3
+                    variants={{ hover: hasLink ? { x: 6 } : {} }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className={`font-[family-name:var(--font-display)] font-medium text-lg sm:text-2xl lg:text-3xl ${
+                      hasLink ? "transition-colors group-hover:text-ink-soft" : ""
+                    }`}
+                  >
+                    {item.title}
+                  </motion.h3>
+                  <p className="mt-1 line-clamp-2 text-sm text-ink-soft sm:line-clamp-none sm:text-base">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <span className="hidden font-mono text-sm uppercase tracking-widest text-ink-soft md:block">
+                  {item.role}
+                </span>
+
+                {hasLink ? (
+                  <span className="font-mono text-sm text-ink-soft">{item.year}</span>
+                ) : (
+                  <span className="font-mono text-xs uppercase tracking-widest text-ink-soft">
+                    Privado
+                  </span>
+                )}
+
+                {hasLink && (
+                  <motion.span
+                    variants={{ hover: { x: 4, opacity: 1 } }}
+                    initial={{ opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                    className="hidden text-ink sm:inline-block"
+                  >
+                    <ArrowUpRight size={20} />
+                  </motion.span>
+                )}
+              </Wrapper>
+            </motion.li>
+          );
+        })}
       </ul>
     </section>
   );
