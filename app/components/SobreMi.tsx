@@ -12,10 +12,10 @@ export default function SobreMi() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-sm uppercase tracking-[0.25em] text-gold">
+          <p className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft">
             Sobre mí
           </p>
-          <blockquote className="mt-4 font-[family-name:var(--font-display)] text-2xl italic leading-snug sm:text-4xl lg:text-5xl">
+          <blockquote className="mt-4 font-[family-name:var(--font-display)] font-medium text-2xl leading-snug sm:text-4xl lg:text-5xl">
             Optimizar la lógica en la gestión de datos y diseñar interfaces de
             usuario eficientes y escalables.
           </blockquote>
@@ -38,7 +38,7 @@ export default function SobreMi() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="font-mono text-sm uppercase tracking-widest text-ink-soft"
         >
-          <p className="mb-2 text-gold">Herramientas de Desarrollo</p>
+          <p className="mb-2 text-ink">Herramientas de Desarrollo</p>
           <ul className="space-y-1">
             <li>Next.js / React</li>
             <li>TypeScript</li>

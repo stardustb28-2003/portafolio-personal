@@ -65,7 +65,7 @@ export default function Hero() {
       <motion.div variants={container} initial="hidden" animate="show">
         <motion.p
           variants={item}
-          className="font-mono text-sm uppercase tracking-[0.25em] text-signal"
+          className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft"
         >
           Desarrollo · Diseño de producto
         </motion.p>
@@ -74,14 +74,14 @@ export default function Hero() {
           variants={item}
           className="mt-4 flex items-center gap-4 sm:gap-6 lg:gap-8"
         >
-          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.75rem,11vw,7.5rem)] leading-[0.95] tracking-tight">
+          <h1 className="font-[family-name:var(--font-display)] font-medium text-[clamp(2.75rem,11vw,7.5rem)] leading-[0.95] tracking-tight">
             {profile.name}
           </h1>
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-64 w-64 shrink-0 overflow-hidden rounded-full ring-1 ring-hairline sm:h-96 sm:w-96 lg:h-[32rem] lg:w-[32rem]"
+            className="relative h-64 w-64 shrink-0 overflow-hidden rounded-full ring-1 ring-hairline sm:h-96 sm:w-96 lg:h-[32rem] lg:w-[32rem] grayscale"
           >
             <Image
               src="/Foto.webp"
@@ -96,15 +96,15 @@ export default function Hero() {
 
         <motion.p
           variants={item}
-          className="mt-6 h-8 font-mono text-base text-signal sm:text-lg"
+          className="mt-6 h-8 font-mono text-base text-ink sm:text-lg"
         >
           {typed}
-          <span className="ml-0.5 inline-block h-[1.1em] w-[2px] translate-y-[2px] animate-pulse bg-signal align-middle" />
+          <span className="ml-0.5 inline-block h-[1.1em] w-[2px] translate-y-[2px] animate-pulse bg-ink align-middle" />
         </motion.p>
 
         <motion.p
           variants={item}
-          className="mt-3 max-w-xl font-[family-name:var(--font-display)] text-lg italic text-ink-soft sm:text-xl lg:text-2xl"
+          className="mt-3 max-w-xl font-[family-name:var(--font-body)] text-lg text-ink-soft sm:text-xl lg:text-2xl"
         >
           {profile.lead}
         </motion.p>
@@ -114,12 +114,12 @@ export default function Hero() {
           className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm uppercase tracking-widest text-ink-soft"
         >
           <span className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+            <span className="h-1.5 w-1.5 rounded-full border border-ink" />
             Disponible para proyectos
           </span>
           <a
             href="#contacto"
-            className="text-ink underline decoration-hairline underline-offset-4 transition-colors hover:text-signal"
+            className="text-ink underline decoration-hairline underline-offset-4 transition-colors hover:text-ink-soft"
           >
             Conversemos →
           </a>

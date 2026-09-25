@@ -14,7 +14,7 @@ export default function Proyectos() {
         transition={{ duration: 0.6 }}
         className="mb-6 flex items-end justify-between border-b border-hairline pb-3"
       >
-        <h2 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl lg:text-3xl">
+        <h2 className="font-[family-name:var(--font-display)] font-medium text-xl sm:text-2xl lg:text-3xl">
           Trabajo seleccionado
         </h2>
         <span className="font-mono text-xs uppercase tracking-widest text-ink-soft sm:text-sm">
@@ -47,7 +47,7 @@ export default function Proyectos() {
                 <motion.h3
                   variants={{ hover: { x: 6 } }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="font-[family-name:var(--font-display)] text-lg transition-colors group-hover:text-signal sm:text-2xl lg:text-3xl"
+                  className="font-[family-name:var(--font-display)] font-medium text-lg transition-colors group-hover:text-ink-soft sm:text-2xl lg:text-3xl"
                 >
                   {item.title}
                 </motion.h3>
@@ -65,7 +65,7 @@ export default function Proyectos() {
                 variants={{ hover: { x: 4, opacity: 1 } }}
                 initial={{ opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="hidden text-signal sm:inline-block"
+                className="hidden text-ink sm:inline-block"
               >
                 <ArrowUpRight size={20} />
               </motion.span>

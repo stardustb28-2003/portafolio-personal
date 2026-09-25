@@ -18,7 +18,7 @@ function TimelineColumn({
 }) {
   return (
     <div>
-      <h3 className="flex items-center gap-2 font-[family-name:var(--font-display)] text-lg sm:text-xl">
+      <h3 className="flex items-center gap-2 font-[family-name:var(--font-display)] font-medium text-lg sm:text-xl">
         {icon}
         {title}
       </h3>
@@ -33,18 +33,18 @@ function TimelineColumn({
             transition={{ duration: 0.5, delay: delayBase + i * 0.1 }}
             className="relative"
           >
-            <span className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-signal ring-4 ring-paper" />
-            <span className="font-mono text-xs uppercase tracking-widest text-signal">
+            <span className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full border border-ink bg-paper ring-4 ring-paper" />
+            <span className="font-mono text-xs uppercase tracking-widest text-ink-soft">
               {it.date}
             </span>
-            <h4 className="mt-1 font-[family-name:var(--font-display)] text-base sm:text-lg">
+            <h4 className="mt-1 font-[family-name:var(--font-display)] font-medium text-base sm:text-lg">
               {it.title}
             </h4>
             <p className="text-sm text-ink-soft">{it.org}</p>
             <ul className="mt-2 space-y-1 text-sm text-ink-soft">
               {it.points.map((p, pi) => (
                 <li key={pi} className="flex gap-2">
-                  <span className="text-signal">—</span>
+                  <span className="text-ink-soft">—</span>
                   <span>{p}</span>
                 </li>
               ))}
@@ -69,10 +69,10 @@ export default function Trayectoria() {
         transition={{ duration: 0.6 }}
         className="mb-10 border-b border-hairline pb-3"
       >
-        <p className="font-mono text-sm uppercase tracking-[0.25em] text-gold">
+        <p className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft">
           Trayectoria
         </p>
-        <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl sm:text-2xl lg:text-3xl">
+        <h2 className="mt-2 font-[family-name:var(--font-display)] font-medium text-xl sm:text-2xl lg:text-3xl">
           Formación y experiencia
         </h2>
       </motion.div>
@@ -80,12 +80,12 @@ export default function Trayectoria() {
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-14">
         <TimelineColumn
           title="Formación"
-          icon={<GraduationCap size={18} className="text-signal" />}
+          icon={<GraduationCap size={18} className="text-ink" />}
           items={education}
         />
         <TimelineColumn
           title="Experiencia"
-          icon={<Briefcase size={18} className="text-signal" />}
+          icon={<Briefcase size={18} className="text-ink" />}
           items={experience}
           delayBase={0.1}
         />

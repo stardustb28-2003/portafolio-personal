@@ -103,8 +103,8 @@ export type TimelineItem = {
 export const education: TimelineItem[] = [
   {
     date: "En curso",
-    title: "Nombre de tu carrera / instituto",
-    org: "Nombre de tu universidad o instituto",
+    title: "Ingenieria de Sistemas",
+    org: "Universidad Autónoma del Perú",
     points: [
       "Reemplaza esto con tus cursos o líneas destacadas.",
       "Ej: bases de datos, arquitectura de software, ingeniería de datos.",

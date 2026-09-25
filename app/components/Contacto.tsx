@@ -53,7 +53,7 @@ export default function Contacto() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl lg:text-6xl">
+        <h2 className="font-[family-name:var(--font-display)] font-medium text-3xl sm:text-5xl lg:text-6xl">
           Contacto.
         </h2>
       </motion.div>
@@ -70,7 +70,7 @@ export default function Contacto() {
   <span className="font-medium">Correo: </span>
   <a
     href={`mailto:${profile.email}`}
-    className="inline-block border-b border-ink transition-colors hover:border-signal hover:text-signal"
+    className="inline-block border-b border-ink transition-colors hover:border-ink-soft hover:text-ink-soft"
   >
     {profile.email}
   </a>
@@ -82,7 +82,7 @@ export default function Contacto() {
               href={profile.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-b border-ink transition-colors hover:border-signal hover:text-signal"
+              className="inline-block border-b border-ink transition-colors hover:border-ink-soft hover:text-ink-soft"
             >
               {profile.whatsapp}
             </a>
@@ -107,7 +107,7 @@ export default function Contacto() {
                 name="name"
                 type="text"
                 required
-                className="mt-1 w-full border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-signal"
+                className="mt-1 w-full border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-ink"
                 placeholder="Tu nombre"
               />
             </div>
@@ -120,7 +120,7 @@ export default function Contacto() {
                 name="email"
                 type="email"
                 required
-                className="mt-1 w-full border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-signal"
+                className="mt-1 w-full border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-ink"
                 placeholder="tu@correo.com"
               />
             </div>
@@ -135,7 +135,7 @@ export default function Contacto() {
               name="message"
               required
               rows={4}
-              className="mt-1 w-full resize-none border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-signal"
+              className="mt-1 w-full resize-none border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-ink"
               placeholder="Cuéntame sobre tu proyecto..."
             />
           </div>
@@ -146,7 +146,7 @@ export default function Contacto() {
               whileTap={{ scale: 0.97 }}
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 font-mono text-xs uppercase tracking-widest text-paper transition-opacity disabled:opacity-60"
+              className="inline-flex items-center gap-2 border border-ink px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-paper disabled:opacity-60"
             >
               {status === "sending" ? (
                 <>
@@ -160,12 +160,12 @@ export default function Contacto() {
             </motion.button>
 
             {status === "success" && (
-              <span className="inline-flex items-center gap-1 text-sm text-signal">
+              <span className="inline-flex items-center gap-1 text-sm text-ink">
                 <Check size={16} /> Mensaje enviado
               </span>
             )}
             {status === "error" && (
-              <span className="inline-flex items-center gap-1 text-sm text-gold">
+              <span className="inline-flex items-center gap-1 text-sm text-ink-soft">
                 <AlertCircle size={16} /> No se pudo enviar. Escríbeme por correo o WhatsApp.
               </span>
             )}
@@ -176,10 +176,10 @@ export default function Contacto() {
       <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-6 font-mono text-sm uppercase tracking-widest text-ink-soft sm:mt-16">
         <span>© 2026 {profile.name}</span>
         <div className="flex gap-6">
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-signal">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">
             GitHub
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-signal">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">
             LinkedIn
           </a>
         </div>

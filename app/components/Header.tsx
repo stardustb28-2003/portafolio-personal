@@ -56,9 +56,9 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 xl:max-w-6xl">
         <a
           href="#inicio"
-          className="font-[family-name:var(--font-display)] text-lg tracking-tight text-ink"
+          className="font-[family-name:var(--font-display)] text-lg font-medium tracking-tight text-ink"
         >
-          Brayan<span className="text-signal">.</span>dev
+          Brayan<span className="text-ink-soft">.</span>dev
         </a>
 
         <nav className="hidden items-center gap-1 font-mono text-xs uppercase tracking-widest text-ink-soft md:flex">
@@ -74,7 +74,7 @@ export default function Header() {
               {active === l.href && (
                 <motion.span
                   layoutId="nav-underline"
-                  className="absolute inset-x-3 -bottom-[1px] h-[1.5px] bg-signal"
+                  className="absolute inset-x-3 -bottom-[1px] h-[1.5px] bg-ink"
                   transition={{ type: "spring", stiffness: 400, damping: 35 }}
                 />
               )}
@@ -109,7 +109,7 @@ export default function Header() {
                   href={l.href}
                   onClick={() => setOpen(false)}
                   className={`rounded-md px-2 py-2.5 transition-colors hover:bg-hairline/40 hover:text-ink ${
-                    active === l.href ? "text-signal" : ""
+                    active === l.href ? "text-ink" : ""
                   }`}
                 >
                   {l.label}
