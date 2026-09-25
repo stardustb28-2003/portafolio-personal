@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
+/* Estilo inspirado en el sistema de diseño de Vercel (modo oscuro):
+   monocromático, bordes finos, tipografía Geist y un solo acento verde. */
 @theme inline {
-  --color-paper: #000000;
-  --color-ink: #ffffff;
-  --color-ink-soft: #8c8c8c;
-  --color-signal: #ffffff;
-  --color-gold: #ffffff;
-  --color-hairline: #ffffff1f;
+  --color-paper: #0a0a0a;
+  --color-surface: #111111;
+  --color-ink: #ededed;
+  --color-ink-soft: #a1a1a1;
+  --color-hairline: #ffffff1a;
+  --color-accent: #45a557;
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -15,10 +17,37 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body), ui-sans-serif, system-ui;
+}
+
+::selection {
+  background: #ededed;
+  color: #0a0a0a;
+}
+
+/* Tarjeta: borde de 1px hecho con sombras apiladas, sin sombras difusas */
+.card {
+  background: var(--color-surface);
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #ffffff14;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 1px #ffffff33;
+}
+
+/* Cuadrícula tenue de fondo para el hero */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, #ffffff0d 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff0d 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 100%);
 }

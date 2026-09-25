@@ -34,10 +34,11 @@ function TimelineColumn({
             className="relative"
           >
             <span className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full border border-ink bg-paper ring-4 ring-paper" />
+            <span className="absolute -left-[26px] top-[9px] h-1 w-1 rounded-full bg-accent" />
             <span className="font-mono text-xs uppercase tracking-widest text-ink-soft">
               {it.date}
             </span>
-            <h4 className="mt-1 font-[family-name:var(--font-display)] font-medium text-base sm:text-lg">
+            <h4 className="mt-1 font-[family-name:var(--font-display)] font-semibold tracking-tight text-base sm:text-lg">
               {it.title}
             </h4>
             <p className="text-sm text-ink-soft">{it.org}</p>
@@ -67,12 +68,12 @@ export default function Trayectoria() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
-        className="mb-10 border-b border-hairline pb-3"
+        className="mb-10"
       >
-        <p className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft">
           Trayectoria
         </p>
-        <h2 className="mt-2 font-[family-name:var(--font-display)] font-medium text-xl sm:text-2xl lg:text-3xl">
+        <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold tracking-[-0.03em] text-2xl sm:text-3xl lg:text-4xl">
           Formación y experiencia
         </h2>
       </motion.div>

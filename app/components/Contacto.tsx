@@ -66,7 +66,7 @@ export default function Contacto() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="font-[family-name:var(--font-display)] font-medium text-3xl sm:text-5xl lg:text-6xl">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold tracking-[-0.05em] text-4xl sm:text-5xl lg:text-6xl">
           Contacto.
         </h2>
       </motion.div>
@@ -123,7 +123,7 @@ export default function Contacto() {
                 name="name"
                 type="text"
                 required
-                className="mt-1 w-full border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-ink"
+                className="mt-2 w-full rounded-md border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-shadow placeholder:text-ink-soft/60 focus:border-ink/40 focus:shadow-[0_0_0_3px_#ffffff14]"
                 placeholder="Tu nombre"
               />
             </div>
@@ -136,7 +136,7 @@ export default function Contacto() {
                 name="email"
                 type="email"
                 required
-                className="mt-1 w-full border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-ink"
+                className="mt-2 w-full rounded-md border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-shadow placeholder:text-ink-soft/60 focus:border-ink/40 focus:shadow-[0_0_0_3px_#ffffff14]"
                 placeholder="tu@correo.com"
               />
             </div>
@@ -151,7 +151,7 @@ export default function Contacto() {
               name="message"
               required
               rows={4}
-              className="mt-1 w-full resize-none border-b border-hairline bg-transparent py-2 text-ink outline-none transition-colors focus:border-ink"
+              className="mt-2 w-full resize-none rounded-md border border-hairline bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-shadow placeholder:text-ink-soft/60 focus:border-ink/40 focus:shadow-[0_0_0_3px_#ffffff14]"
               placeholder="Cuéntame sobre tu proyecto..."
             />
           </div>
@@ -162,7 +162,7 @@ export default function Contacto() {
               whileTap={{ scale: 0.97 }}
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center gap-2 border border-ink px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:bg-ink hover:text-paper disabled:opacity-60"
+              className="inline-flex h-10 items-center gap-2 rounded-md bg-ink px-5 text-sm font-medium text-paper transition-colors hover:bg-ink/85 disabled:opacity-60"
             >
               {status === "sending" ? (
                 <>
@@ -176,7 +176,7 @@ export default function Contacto() {
             </motion.button>
 
             {status === "success" && (
-              <span className="inline-flex items-center gap-1 text-sm text-ink">
+              <span className="inline-flex items-center gap-1 text-sm text-accent">
                 <Check size={16} /> Mensaje enviado
               </span>
             )}
@@ -189,7 +189,7 @@ export default function Contacto() {
         </motion.form>
       </div>
 
-      <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-6 font-mono text-sm uppercase tracking-widest text-ink-soft sm:mt-16">
+      <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-6 font-mono text-xs uppercase tracking-widest text-ink-soft sm:mt-24">
         <span>© 2026 {profile.name}</span>
         <div className="flex gap-6">
           <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ink">

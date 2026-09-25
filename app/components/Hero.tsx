@@ -61,27 +61,37 @@ export default function Hero() {
   const typed = useTypedRoles(profile.roles);
 
   return (
-    <section id="inicio" className="mx-auto max-w-5xl px-4 pt-10 pb-14 sm:px-6 sm:pt-16 sm:pb-20 lg:px-8 lg:pt-24 xl:max-w-6xl">
-      <motion.div variants={container} initial="hidden" animate="show">
+    <section id="inicio" className="relative">
+      <div aria-hidden="true" className="grid-bg pointer-events-none absolute inset-0 -top-20" />
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative mx-auto max-w-5xl px-4 pt-10 pb-16 sm:px-6 sm:pt-16 sm:pb-24 lg:px-8 lg:pt-24 xl:max-w-6xl"
+      >
         <motion.p
           variants={item}
-          className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft"
+          className="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 font-mono text-xs text-ink-soft shadow-[0_0_0_1px_#ffffff1a]"
         >
-          Desarrollo · Diseño de producto
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+          </span>
+          Disponible para proyectos
         </motion.p>
 
         <motion.div
           variants={item}
           className="mt-4 flex items-center gap-4 sm:gap-6 lg:gap-8"
         >
-          <h1 className="font-[family-name:var(--font-display)] font-medium text-[clamp(2.75rem,11vw,7.5rem)] leading-[0.95] tracking-tight">
+          <h1 className="font-[family-name:var(--font-display)] font-semibold text-[clamp(2.75rem,11vw,7.5rem)] leading-[0.95] tracking-[-0.05em]">
             {profile.name}
           </h1>
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-64 w-64 shrink-0 overflow-hidden rounded-full ring-1 ring-hairline sm:h-96 sm:w-96 lg:h-[32rem] lg:w-[32rem] grayscale"
+            className="relative h-28 w-28 shrink-0 overflow-hidden rounded-full ring-1 ring-hairline ring-offset-8 ring-offset-paper sm:h-96 sm:w-96 lg:h-[32rem] lg:w-[32rem] grayscale"
           >
             <Image
               src="/Foto.webp"
@@ -98,6 +108,7 @@ export default function Hero() {
           variants={item}
           className="mt-6 h-8 font-mono text-base text-ink sm:text-lg"
         >
+          <span className="text-accent">▲ </span>
           {typed}
           <span className="ml-0.5 inline-block h-[1.1em] w-[2px] translate-y-[2px] animate-pulse bg-ink align-middle" />
         </motion.p>
@@ -109,19 +120,18 @@ export default function Hero() {
           {profile.lead}
         </motion.p>
 
-        <motion.div
-          variants={item}
-          className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm uppercase tracking-widest text-ink-soft"
-        >
-          <span className="inline-flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full border border-ink" />
-            Disponible para proyectos
-          </span>
+        <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
           <a
             href="#contacto"
-            className="text-ink underline decoration-hairline underline-offset-4 transition-colors hover:text-ink-soft"
+            className="inline-flex h-10 items-center rounded-md bg-ink px-5 text-sm font-medium text-paper transition-colors hover:bg-ink/85"
           >
-            Conversemos →
+            Conversemos
+          </a>
+          <a
+            href="#trabajo"
+            className="inline-flex h-10 items-center rounded-md px-5 text-sm font-medium text-ink shadow-[0_0_0_1px_#ffffff26] transition-colors hover:bg-surface"
+          >
+            Ver proyectos
           </a>
         </motion.div>
       </motion.div>

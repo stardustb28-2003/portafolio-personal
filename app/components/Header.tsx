@@ -56,17 +56,20 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 xl:max-w-6xl">
         <a
           href="#inicio"
-          className="font-[family-name:var(--font-display)] text-lg font-medium tracking-tight text-ink"
+          className="inline-flex items-center gap-2 font-[family-name:var(--font-display)] text-base font-semibold tracking-tight text-ink"
         >
-          Brayan<span className="text-ink-soft">.</span>dev
+          <span aria-hidden="true" className="text-sm">▲</span>
+          <span>
+            Brayan<span className="text-ink-soft">.dev</span>
+          </span>
         </a>
 
-        <nav className="hidden items-center gap-1 font-mono text-xs uppercase tracking-widest text-ink-soft md:flex">
+        <nav className="hidden items-center gap-1 text-sm text-ink-soft md:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className={`relative px-3 py-2 transition-colors hover:text-ink ${
+              className={`relative rounded-md px-3 py-1.5 transition-colors hover:bg-surface hover:text-ink ${
                 active === l.href ? "text-ink" : ""
               }`}
             >
@@ -74,7 +77,7 @@ export default function Header() {
               {active === l.href && (
                 <motion.span
                   layoutId="nav-underline"
-                  className="absolute inset-x-3 -bottom-[1px] h-[1.5px] bg-ink"
+                  className="absolute inset-x-3 bottom-0 h-px bg-ink"
                   transition={{ type: "spring", stiffness: 400, damping: 35 }}
                 />
               )}
@@ -87,7 +90,7 @@ export default function Header() {
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-hairline text-ink md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-md border border-hairline text-ink md:hidden"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>
@@ -102,13 +105,13 @@ export default function Header() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden border-t border-hairline md:hidden"
           >
-            <div className="flex flex-col gap-1 px-4 py-3 font-mono text-sm uppercase tracking-widest text-ink-soft sm:px-6">
+            <div className="flex flex-col gap-1 px-4 py-3 text-sm text-ink-soft sm:px-6">
               {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-md px-2 py-2.5 transition-colors hover:bg-hairline/40 hover:text-ink ${
+                  className={`rounded-md px-2 py-2.5 transition-colors hover:bg-surface hover:text-ink ${
                     active === l.href ? "text-ink" : ""
                   }`}
                 >

@@ -12,9 +12,9 @@ export default function Proyectos() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
-        className="mb-6 flex items-end justify-between border-b border-hairline pb-3"
+        className="mb-6 flex items-end justify-between"
       >
-        <h2 className="font-[family-name:var(--font-display)] font-medium text-xl sm:text-2xl lg:text-3xl">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold tracking-[-0.03em] text-2xl sm:text-3xl lg:text-4xl">
           Trabajo seleccionado
         </h2>
         <span className="font-mono text-xs uppercase tracking-widest text-ink-soft sm:text-sm">
@@ -22,7 +22,7 @@ export default function Proyectos() {
         </span>
       </motion.div>
 
-      <ul>
+      <ul className="card divide-y divide-hairline overflow-hidden">
         {projects.map((item, i) => {
           const hasLink = Boolean(item.link);
           const Wrapper = hasLink ? motion.a : motion.div;
@@ -41,12 +41,12 @@ export default function Proyectos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="group border-b border-hairline"
+              className="group"
             >
               <Wrapper
                 {...wrapperProps}
                 whileHover="hover"
-                className={`flex items-center gap-3 py-5 sm:gap-6 sm:py-7 ${
+                className={`flex items-center gap-3 px-4 py-5 transition-colors sm:gap-6 sm:px-6 sm:py-6 ${hasLink ? "hover:bg-white/[0.03]" : ""} ${
                   hasLink ? "" : "cursor-default"
                 }`}
               >
@@ -58,7 +58,7 @@ export default function Proyectos() {
                   <motion.h3
                     variants={{ hover: hasLink ? { x: 6 } : {} }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className={`font-[family-name:var(--font-display)] font-medium text-lg sm:text-2xl lg:text-3xl ${
+                    className={`font-[family-name:var(--font-display)] font-semibold tracking-[-0.02em] text-lg sm:text-xl lg:text-2xl ${
                       hasLink ? "transition-colors group-hover:text-ink-soft" : ""
                     }`}
                   >
@@ -69,7 +69,7 @@ export default function Proyectos() {
                   </p>
                 </div>
 
-                <span className="hidden font-mono text-sm uppercase tracking-widest text-ink-soft md:block">
+                <span className="hidden rounded-full px-2.5 py-0.5 font-mono text-xs text-ink-soft shadow-[0_0_0_1px_#ffffff1a] md:block">
                   {item.role}
                 </span>
 

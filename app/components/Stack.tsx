@@ -22,10 +22,10 @@ export default function Stack() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6 }}
-        className="mb-8 border-b border-hairline pb-3"
+        className="mb-8"
       >
-        <p className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft">Stack</p>
-        <h2 className="mt-2 font-[family-name:var(--font-display)] font-medium text-xl sm:text-2xl lg:text-3xl">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft">Stack</p>
+        <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold tracking-[-0.03em] text-2xl sm:text-3xl lg:text-4xl">
           Herramientas que uso
         </h2>
       </motion.div>
@@ -41,12 +41,12 @@ export default function Stack() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
-              className="group border border-hairline p-5 transition-colors hover:border-ink/40"
+              className="card group p-5"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-hairline text-ink transition-colors group-hover:border-ink">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md border border-hairline bg-paper text-ink transition-colors group-hover:border-ink/40">
                 <Icon size={18} />
               </div>
-              <h3 className="mt-4 font-[family-name:var(--font-display)] font-medium text-lg">
+              <h3 className="mt-4 font-[family-name:var(--font-display)] font-semibold tracking-tight text-lg">
                 {skill.title}
               </h3>
               <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-ink-soft">

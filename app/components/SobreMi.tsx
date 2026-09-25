@@ -12,10 +12,10 @@ export default function SobreMi() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-sm uppercase tracking-[0.25em] text-ink-soft">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft">
             Sobre mí
           </p>
-          <blockquote className="mt-4 font-[family-name:var(--font-display)] font-medium text-2xl leading-snug sm:text-4xl lg:text-5xl">
+          <blockquote className="mt-4 font-[family-name:var(--font-display)] font-semibold tracking-[-0.04em] text-2xl leading-tight sm:text-4xl lg:text-5xl">
             Optimizar la lógica en la gestión de datos y diseñar interfaces de
             usuario eficientes y escalables.
           </blockquote>
@@ -36,10 +36,10 @@ export default function SobreMi() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="font-mono text-sm uppercase tracking-widest text-ink-soft"
+          className="card self-start p-5 font-mono text-sm text-ink-soft"
         >
-          <p className="mb-2 text-ink">Herramientas de Desarrollo</p>
-          <ul className="space-y-1">
+          <p className="mb-3 text-xs uppercase tracking-[0.2em] text-ink">Herramientas de desarrollo</p>
+          <ul className="space-y-1.5">
             <li>Next.js / React</li>
             <li>TypeScript</li>
             <li>Tailwind CSS</li>
