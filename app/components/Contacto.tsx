@@ -5,12 +5,22 @@ import { motion } from "framer-motion";
 import { Send, Loader2, Check, AlertCircle } from "lucide-react";
 import { profile } from "../Lib/data";
 
-// 1. Crea una cuenta gratis en https://formspree.io
-// 2. Crea un formulario y copia su endpoint (algo como https://formspree.io/f/xxxxxxx)
-// 3. Reemplaza el valor de abajo con ese endpoint.
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/TU_ID_AQUI";
+// Endpoint del formulario "Contacto Portafolio" en Formspree (envía a stardustb28@hotmail.com).
+// Se puede sobrescribir con la variable NEXT_PUBLIC_FORMSPREE_ENDPOINT.
+// Si el envío falla, se abre el correo del visitante con el mensaje listo.
+const FORMSPREE_ENDPOINT =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/xdekdpvk";
 
 type Status = "idle" | "sending" | "success" | "error";
+
+function openMailFallback(data: FormData) {
+  const name = String(data.get("name") ?? "");
+  const email = String(data.get("email") ?? "");
+  const message = String(data.get("message") ?? "");
+  const subject = encodeURIComponent(`Contacto desde el portafolio - ${name}`);
+  const body = encodeURIComponent(`${message}\n\n${name}\n${email}`);
+  window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+}
 
 export default function Contacto() {
   const [status, setStatus] = useState<Status>("idle");
@@ -18,13 +28,14 @@ export default function Contacto() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (FORMSPREE_ENDPOINT.includes("TU_ID_AQUI")) {
-      setStatus("error");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    if (!FORMSPREE_ENDPOINT) {
+      openMailFallback(data);
       return;
     }
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
     setStatus("sending");
 
     try {
@@ -39,9 +50,11 @@ export default function Contacto() {
         form.reset();
       } else {
         setStatus("error");
+        openMailFallback(data);
       }
     } catch {
       setStatus("error");
+      openMailFallback(data);
     }
   }
 
@@ -97,6 +110,9 @@ export default function Contacto() {
           onSubmit={handleSubmit}
           className="space-y-4"
         >
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu portafolio" />
+          {/* Trampa antispam de Formspree: los bots la llenan, las personas no la ven */}
+          <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="font-mono text-xs uppercase tracking-widest text-ink-soft">
@@ -166,7 +182,7 @@ export default function Contacto() {
             )}
             {status === "error" && (
               <span className="inline-flex items-center gap-1 text-sm text-ink-soft">
-                <AlertCircle size={16} /> No se pudo enviar. Escríbeme por correo o WhatsApp.
+                <AlertCircle size={16} /> No se pudo enviar. Abrimos tu correo o escríbeme por WhatsApp.
               </span>
             )}
           </div>
