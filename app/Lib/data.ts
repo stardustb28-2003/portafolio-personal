@@ -48,7 +48,6 @@ export const projects: Project[] = [
     title: "Landing page profesional",
     tech: "HTML · CSS · JavaScript · Leaflet · Formspree",
     desc: "Landing para una profesional independiente: formulario de contacto, mapa de zonas de atención con datos geográficos abiertos, y diseño responsive con foco en accesibilidad y privacidad de datos.",
-    link: "https://maricela-palomino-medina-qf.vercel.app",
   },
   {
     n: "04",
@@ -111,8 +110,9 @@ export const education: TimelineItem[] = [
     title: "Ingenieria de Sistemas",
     org: "Universidad Autónoma del Perú",
     points: [
-      "Reemplaza esto con tus cursos o líneas destacadas.",
-      "Ej: bases de datos, arquitectura de software, ingeniería de datos.",
+      "Bases de datos y modelado relacional/NoSQL aplicado a sistemas reales.",
+      "Arquitectura de software y seguridad (autenticación, validación de datos).",
+      "Inteligencia de negocio (BI) e introducción a la inteligencia artificial.",
     ],
   },
 ];
