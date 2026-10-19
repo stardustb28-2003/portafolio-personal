@@ -11,6 +11,7 @@ export const profile = {
     "Desarrollador Full Stack",
     "Ingeniero de Sistemas en formación",
     "Diseñador de bases de datos",
+    "Explorando IA y análisis de datos",
   ],
   location: "Lima, Perú",
   email: "StardustB28@hotmail.com",
@@ -25,8 +26,7 @@ export const profile = {
 export type Project = {
   n: string;
   title: string;
-  role: string;
-  year: string;
+  tech: string;
   desc: string;
   link?: string;
 };
@@ -35,17 +35,27 @@ export const projects: Project[] = [
   {
     n: "01",
     title: "Sistema de gestión para boticas",
-    role: "Full-stack · Base de datos · Tiempo real",
-    year: "2026",
-    desc: "Sistema privado para un cliente real: punto de venta, inventario por lotes, roles y permisos, caja y créditos, alertas de stock/vencimientos, analítica y un dashboard en tiempo real.",
+    tech: "Next.js · Supabase (Postgres, Realtime) · JWT · Zod",
+    desc: "Punto de venta, inventario por lotes, roles y permisos, caja y créditos, alertas de stock y vencimientos, analítica y un dashboard en tiempo real.",
   },
   {
     n: "02",
+    title: "Sistema web para clínica dental",
+    tech: "HTML · CSS · JavaScript · Chatbot propio",
+    desc: "Rediseño completo de la web pública de una clínica dental: identidad visual, cita en línea por WhatsApp, chatbot de atención al paciente, mapa de sede y accesibilidad cuidada.",
+  },
+  {
+    n: "03",
+    title: "Landing page profesional",
+    tech: "HTML · CSS · JavaScript · Leaflet · Formspree",
+    desc: "Landing para una profesional independiente: formulario de contacto, mapa de zonas de atención con datos geográficos abiertos, y diseño responsive con foco en accesibilidad y privacidad de datos.",
+    link: "https://maricela-palomino-medina-qf.vercel.app",
+  },
+  {
+    n: "04",
     title: "María Luisa Nutricionista",
-    role: "Frontend · Backend · Base de datos",
-    year: "2026",
+    tech: "Next.js · Supabase · TypeScript",
     desc: "Plataforma web comercial para servicios de nutrición preventiva, con tienda, reservas y autenticación segura.",
-    link: "https://nutricionistamarialuisa.vercel.app/",
   },
 ];
 
@@ -61,7 +71,7 @@ export const skills: Skill[] = [
     icon: "layout",
     title: "Frontend",
     level: "Nivel intermedio",
-    items: ["Next.js / React", "TypeScript", "Tailwind CSS"],
+    items: ["Next.js / React", "TypeScript", "JavaScript (vanilla)", "Tailwind CSS"],
   },
   {
     icon: "database",
@@ -79,7 +89,7 @@ export const skills: Skill[] = [
     icon: "git",
     title: "Herramientas",
     level: "Nivel intermedio",
-    items: ["Git / GitHub", "Vercel", "Power BI"],
+    items: ["Git / GitHub", "Vercel", "Power BI", "Leaflet / mapas", "Formspree"],
   },
 ];
 
@@ -105,11 +115,13 @@ export const education: TimelineItem[] = [
 export const experience: TimelineItem[] = [
   {
     date: "2026",
-    title: "Nombre del proyecto o puesto",
-    org: "Cliente o empresa",
+    title: "Desarrollador Freelance",
+    org: "Proyectos independientes",
     points: [
-      "Describe brevemente qué hiciste y con qué tecnologías.",
-      "Puedes agregar más líneas o más entradas en app/lib/data.ts.",
+      "Diseño y desarrollo de sistemas de gestión a medida (ventas, inventario, roles y permisos) y landing pages profesionales para clientes reales, de principio a fin: base de datos, backend y frontend.",
+      "Atención al detalle en seguridad y privacidad de datos (autenticación, minimización de datos personales, buenas prácticas de protección de datos).",
+      "Comunicación directa con clientes no técnicos: traducir sus necesidades del negocio en requerimientos claros y entregas funcionales.",
+      "Capacidad de adaptar rápidamente una misma base de código a distintos rubros (salud, nutrición, retail) sin perder calidad ni orden.",
     ],
   },
 ];

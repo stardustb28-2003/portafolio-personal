@@ -29,6 +29,13 @@ export default function SobreMi() {
             valor tanto en la estructuración de modelos relacionales/NoSQL
             como en la implementación de frontends interactivos y escalables.
           </p>
+          <p className="mt-6 max-w-lg text-sm text-ink-soft sm:text-base">
+            Hoy trabajo como freelance construyendo sistemas de gestión y
+            landing pages completas para negocios reales. A mediano plazo
+            quiero orientar ese mismo criterio de datos hacia el análisis de
+            datos y la inteligencia de negocio (BI), y más adelante hacia la
+            aplicación práctica de inteligencia artificial.
+          </p>
         </motion.div>
 
         <motion.div

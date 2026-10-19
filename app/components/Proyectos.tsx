@@ -69,17 +69,9 @@ export default function Proyectos() {
                   </p>
                 </div>
 
-                <span className="hidden font-mono text-sm uppercase tracking-widest text-ink-soft md:block">
-                  {item.role}
+                <span className="hidden max-w-[14rem] text-right font-mono text-xs uppercase tracking-widest text-ink-soft md:block">
+                  {item.tech}
                 </span>
-
-                {hasLink ? (
-                  <span className="font-mono text-sm text-ink-soft">{item.year}</span>
-                ) : (
-                  <span className="font-mono text-xs uppercase tracking-widest text-ink-soft">
-                    Privado
-                  </span>
-                )}
 
                 {hasLink && (
                   <motion.span
