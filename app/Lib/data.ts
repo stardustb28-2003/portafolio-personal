@@ -11,7 +11,6 @@ export const profile = {
     "Desarrollador Full Stack",
     "Ingeniero de Sistemas en formación",
     "Diseñador de bases de datos",
-    "Explorando IA y análisis de datos",
   ],
   location: "Lima, Perú",
   email: "StardustB28@hotmail.com",
@@ -57,6 +56,12 @@ export const projects: Project[] = [
     tech: "Next.js · Supabase · TypeScript",
     desc: "Plataforma web comercial para servicios de nutrición preventiva, con tienda, reservas y autenticación segura.",
   },
+  {
+    n: "05",
+    title: "Asistente virtual con IA (en desarrollo)",
+    tech: "Python · PySide6 · Claude API · Whisper · Edge TTS",
+    desc: "Compañero de escritorio con personaje animado: conversación por voz y texto, control de aplicaciones y música, memoria de largo plazo entre sesiones y un sistema de permisos por niveles para las acciones que ejecuta en el equipo.",
+  },
 ];
 
 export type Skill = {
@@ -83,7 +88,7 @@ export const skills: Skill[] = [
     icon: "server",
     title: "Backend",
     level: "Nivel intermedio",
-    items: ["Node.js", "APIs REST", "Autenticación con JWT", "Validación con Zod"],
+    items: ["Node.js", "Python", "APIs REST", "Autenticación con JWT", "Validación con Zod", "Integración con APIs de IA"],
   },
   {
     icon: "git",
