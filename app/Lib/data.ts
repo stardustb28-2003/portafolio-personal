@@ -60,7 +60,7 @@ export const projects: Project[] = [
     n: "05",
     title: "Asistente virtual con IA (en desarrollo)",
     tech: "Python · PySide6 · Claude API · Whisper · Edge TTS",
-    desc: "Compañero de escritorio con personaje animado: conversación por voz y texto, control de aplicaciones y música, memoria de largo plazo entre sesiones y un sistema de permisos por niveles para las acciones que ejecuta en el equipo.",
+    desc: "Asistente de escritorio con IA: conversación por voz y texto, control de aplicaciones y música, memoria de largo plazo entre sesiones y un sistema de permisos por niveles para las acciones que ejecuta en el equipo.",
   },
 ];
 
